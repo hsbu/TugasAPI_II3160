@@ -190,7 +190,7 @@ hr {
 @media (max-width: 1015px) {
   .content-container {
     flex-direction: column;
-    gap: 0rem; /* space between ASCII and profile */
+    gap: 0rem;
   }
   .profile-info {
     padding-top: var(--step--2);
@@ -201,11 +201,124 @@ hr {
   }
 }
 
+@media (max-width: 430px) and (max-height: 932px) {
+  body {
+    overflow-y: auto;
+  }
+  
+  .terminal-window {
+    min-height: 100vh;
+    max-height: none;
+    overflow-y: auto;
+  }
+  
+  .ascii {
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    padding-left: var(--step--1);
+    line-height: 0.9;
+  }
+  
+  .content-container {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  
+  .profile-info {
+    padding: var(--step--1);
+    max-width: 100%;
+    font-size: var(--step--2);
+  }
+  
+  .info-item {
+    margin-bottom: 0.3rem;
+    font-size: var(--step--2);
+  }
+  
+  .info-item i {
+    min-width: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  #terminal {
+    height: 40vh;
+    padding-left: var(--step--1);
+    font-size: var(--step--1);
+  }
+  
+  .spotify-panel {
+    font-size: var(--step--2);
+    padding: 0.3rem;
+    margin: 10px;
+    position: relative;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .spotify-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .spotify-icon {
+    font-size: var(--step-1);
+    padding: 0.2rem;
+  }
+  
+  header {
+    padding: 8px;
+    font-size: var(--step--1);
+  }
+  
+  .header-icon {
+    font-size: 1rem;
+  }
+  
+  .centered {
+    font-size: var(--step--1);
+  }
+  
+  #cursor-cat-gif {
+    width: var(--step-2);
+  }
+}
+
 /* Terminal input */
 #terminal {
   height: 55vh;
   padding-left: var(--step-0);
   font-size: var(--step-0);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+  
+  .terminal-window {
+    overflow-y: auto;
+    min-height: 100vh;
+  }
+  
+  #terminal {
+    height: auto;
+    min-height: 35vh;
+    padding-left: var(--step--1);
+  }
+  
+  .ascii {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    padding-left: var(--step-0);
+  }
+  
+  .content-container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .profile-info {
+    padding: var(--step-0);
+  }
 }
 
 @media (max-width: 726px) {
@@ -373,4 +486,62 @@ pre {
 a {
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+/* Weather Display Responsive Styles */
+@media (max-width: 480px) {
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.4rem;
+  }
+  
+  .info-item i {
+    margin-bottom: 0.2rem;
+  }
+  
+  .link-text {
+    padding-left: 0;
+    font-size: var(--step--2);
+  }
+  
+  .terminal-window {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+  
+  header {
+    padding: 5px;
+  }
+  
+  .bottom-bar {
+    position: relative;
+    padding: 0.25rem;
+  }
+  
+  .spotify-panel {
+    margin: 5px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  .ascii {
+    font-size: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  
+  .profile-info {
+    font-size: 0.7rem;
+  }
+  
+  .info-item {
+    font-size: 0.7rem;
+  }
+  
+  #terminal {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+  }
 }
