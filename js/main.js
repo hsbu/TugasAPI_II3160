@@ -68,24 +68,6 @@ function enterKey(e) {
     document.location.reload(true);
   }
 
-  if (e.key === "Tab") {
-    e.preventDefault();
-    const partial = textarea.value.toLowerCase();
-    const matches = Object.keys(commandMap).filter((cmd) =>
-      cmd.startsWith(partial),
-    );
-    if (matches.length === 1) {
-      textarea.value = matches[0];
-      command.innerHTML = matches[0];
-    } else if (matches.length > 1) {
-      addLine("<br>", "", 0);
-      loopLines(matches, "color2", 80);
-      addLine("<br>", "", matches.length * 80 + 100);
-    }
-    scrollToBottom();
-    return;
-  }
-
   if (e.ctrlKey && e.key === "r") {
     e.preventDefault();
     const search = prompt("Reverse search:");
