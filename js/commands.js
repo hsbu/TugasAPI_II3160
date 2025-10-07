@@ -97,7 +97,7 @@ function loadDefaultWeather() {
 }
 
 let help = [
-  `<br><div id="help-section"><pre class="whitespace-pre-wrap">
+  `<div id="help-section"><pre class="whitespace-pre-wrap">
 <span class="command">aboutme</span>
 ↳ Displays who I am?
 <span class="command">weather &lt;city&gt;</span>
@@ -114,5 +114,5 @@ let help = [
 ↳ Run Snake Game.
 <span class="command">clear</span>
 ↳ Clear the terminal.
-</pre></div><br>`,
+</pre></div>`,
 ];
